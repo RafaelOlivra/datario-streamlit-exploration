@@ -1,4 +1,4 @@
-# Dashboard - Covid
+# Dashboard - Chegada de Turistas no Rio de Janeiro (2019)
 ----
 
 **Rafael Soares de Oliveira**
@@ -6,7 +6,6 @@
 Infnet - Ciência de Dados | Setembro 2024
 
 ### Inicializar o repositório (Com venv)
-Preferencialmente utilize um ambiente linux ou WSL.
 
 ```console
 python -m venv .venv && source .venv/bin/activate
