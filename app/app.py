@@ -1,12 +1,12 @@
 import time
 import streamlit as st
+from streamlit_js_eval import streamlit_js_eval
 import pandas as pd
 import plotly.express as px
 import pydeck as pdk
 import time
 import numpy as np
 import locale
-from streamlit_js_eval import streamlit_js_eval
 
 ############## CONFIG ##############
 
