@@ -84,8 +84,21 @@ def get_current_view_index():
 def set_current_view(view):
     st.session_state.current_view = view
 
-############## CUSTOMIZATION FUNCTIONS ##############
 
+def get_available_explore_views():
+    return ['Explorador', 'Editor']
+
+
+def get_current_explore_view():
+    current_explore_view = st.session_state.current_explore_view
+    return current_explore_view or get_available_explore_views()[0]
+
+
+def get_current_explore_view_index():
+    return get_available_explore_views().index(get_current_explore_view())
+
+
+############## CUSTOMIZATION FUNCTIONS ##############
 
 def apply_customizations():
     # Ignore if customizations are not set
@@ -268,16 +281,18 @@ def view_download_processed_csv():
     st.write('''Faça o download do arquivo CSV com os dados processados da planilha
              **"Chegada de turistas pelo Município do Rio de Janeiro, por vias de acesso, segundo continentes e países de residência permanente entre 2006-2019"**.''')
 
-    csv_content = get_csv_content("./data/02_processed/total_continentes.csv")
+    with st.spinner('Carregando Dados...'):
+        csv_content = get_csv_content(
+            "./data/02_processed/total_continentes.csv")
 
-    st.download_button(
-        label="Download do CSV Normalizado",
-        data=csv_content,
-        file_name='total_continentes.csv',
-        mime='text/csv',
-        use_container_width=True,
-        type='primary'
-    )
+        st.download_button(
+            label="Download do CSV Normalizado",
+            data=csv_content,
+            file_name='total_continentes.csv',
+            mime='text/csv',
+            use_container_width=True,
+            type='primary'
+        )
 
 
 def view_data_upload():
@@ -285,7 +300,7 @@ def view_data_upload():
 
     if get_data() is not None:
         st.success(
-            '✅ Dados carregados com sucesso. Utilize o menu lateral para explorar os dados.')
+            '✅ Dados carregados com sucesso. Utilize o menu **Explorar** para explorar os dados.')
 
         # Adiciona um botão para limpar os dados
         st.write("")
@@ -329,13 +344,18 @@ def view_explore():
     if get_data() is None:
         st.warning('⚠️ Faça o upload dos dados para explorar.')
         return
-    explore_options = ['Explorador', 'Editor']
-    current_explore_view = st.session_state.current_explore_view
+
+    explore_options = get_available_explore_views()
+    current_explore_view = get_current_explore_view()
     explore_option = st.selectbox(
-        'Opções de Visualização', ['Explorador', 'Editor'], index=explore_options.index(current_explore_view))
+        'Opções de Visualização', explore_options, index=explore_options.index(current_explore_view))
 
     # Save the current explore view
     st.session_state.current_explore_view = explore_option
+
+    # Show a loader while the data is being loaded
+    with st.spinner('Carregando dados...'):
+        data = get_data()
 
     # Explore the data
     if explore_option == 'Explorador':
@@ -347,11 +367,11 @@ def view_explore():
         # Make a selection for selecting the continent
         col1, col2, col3 = st.columns(3)
         continent = col1.selectbox(
-            'Continente', ['Todos'] + get_data()['Continente'].unique().tolist())
+            'Continente', ['Todos'] + data['Continente'].unique().tolist())
         if continent != 'Todos':
-            filtered_data = get_data()[get_data()['Continente'] == continent]
+            filtered_data = data[data['Continente'] == continent]
         else:
-            filtered_data = get_data()
+            filtered_data = data
 
         # Make a selection for selecting the country, should already be filtered by the continent
         # Sort by country name
@@ -417,8 +437,8 @@ def view_explore():
 
         # Make a multiselect for selecting the columns to display
         columns = st.multiselect(
-            'Colunas', get_data().columns.tolist(), default=get_data().columns.tolist())
-        df = get_data()[columns]
+            'Colunas', data.columns.tolist(), default=get_data().columns.tolist())
+        df = data[columns]
 
         # Allow user to filter the displayed data with a search_filter box
         search_filter = st.text_input('Filtrar Valores', '')
