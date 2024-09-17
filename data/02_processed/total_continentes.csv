@@ -9,7 +9,7 @@ Moçambique,África,118,0,118,2016
 Nigéria,África,391,0,391,2016
 Quênia,África,564,0,564,2016
 Tunísia,África,1082,0,1082,2016
-Outros,África,2628,4,2632,2016
+Outros - África,África,2628,4,2632,2016
 Costa Rica,América Central e Caribe,2662,8,2670,2016
 Cuba,América Central e Caribe,1631,0,1631,2016
 El Salvador,América Central e Caribe,1074,0,1074,2016
@@ -20,7 +20,7 @@ Nicarágua,América Central e Caribe,297,0,297,2016
 Panamá,América Central e Caribe,2568,0,2568,2016
 República Dominicana,América Central e Caribe,1140,5,1145,2016
 Trinidad e Tobago,América Central e Caribe,428,1,429,2016
-Outros,América Central e Caribe,1401,1,1402,2016
+Outros - América Central e Caribe,América Central e Caribe,1401,1,1402,2016
 Canadá,América do Norte,21589,255,21844,2016
 Estados Unidos,América do Norte,220071,1374,221445,2016
 México,América do Norte,13386,229,13615,2016
@@ -54,7 +54,7 @@ República da Coreia,Ásia,5245,12,5257,2016
 Síria,Ásia,139,0,139,2016
 Tailândia,Ásia,1352,158,1510,2016
 Taiwan,Ásia,1656,1,1657,2016
-Outros,Ásia,3912,3,3915,2016
+Outros - Ásia,Ásia,3912,3,3915,2016
 Alemanha,Europa,57653,361,58014,2016
 Áustria,Europa,6821,77,6898,2016
 Bélgica,Europa,10925,33,10958,2016
@@ -87,10 +87,10 @@ Suécia,Europa,11825,12,11837,2016
 Suíça,Europa,17228,178,17406,2016
 Turquia,Europa,2729,3,2732,2016
 Ucrânia,Europa,3163,12,3175,2016
-Outros,Europa,3095,6,3101,2016
+Outros - Europa,Europa,3095,6,3101,2016
 Austrália,Oceania,18465,218,18683,2016
 Nova Zelândia,Oceania,5808,63,5871,2016
-Outros,Oceania,366,2,368,2016
+Outros - Oceania,Oceania,366,2,368,2016
 Países não especificados,Países não especificados,15,0,15,2016
 África do Sul,África,2650,140,2790,2017
 Angola,África,7088,0,7088,2017
@@ -102,7 +102,7 @@ Moçambique,África,417,0,417,2017
 Nigéria,África,176,0,176,2017
 Quênia,África,328,0,328,2017
 Tunísia,África,660,1,661,2017
-Outros,África,1894,1,1895,2017
+Outros - África,África,1894,1,1895,2017
 Costa Rica,América Central e Caribe,2878,2,2880,2017
 Cuba,América Central e Caribe,772,0,772,2017
 El Salvador,América Central e Caribe,811,0,811,2017
@@ -113,7 +113,7 @@ Nicarágua,América Central e Caribe,233,1,234,2017
 Panamá,América Central e Caribe,3663,5,3668,2017
 República Dominicana,América Central e Caribe,608,20,628,2017
 Trinidad e Tobago,América Central e Caribe,233,3,236,2017
-Outros,América Central e Caribe,443,8,451,2017
+Outros - América Central e Caribe,América Central e Caribe,443,8,451,2017
 Canadá,América do Norte,8138,975,9113,2017
 Estados Unidos,América do Norte,132913,2932,135845,2017
 México,América do Norte,13198,419,13617,2017
@@ -147,7 +147,7 @@ República da Coreia,Ásia,3556,41,3597,2017
 Síria,Ásia,195,0,195,2017
 Tailândia,Ásia,685,21,706,2017
 Taiwan,Ásia,905,31,936,2017
-Outros,Ásia,1992,16,2008,2017
+Outros - Ásia,Ásia,1992,16,2008,2017
 Alemanha,Europa,50782,1414,52196,2017
 Áustria,Europa,6851,79,6930,2017
 Bélgica,Europa,6930,66,6996,2017
@@ -180,10 +180,10 @@ Suécia,Europa,7822,41,7863,2017
 Suíça,Europa,15685,168,15853,2017
 Turquia,Europa,2635,16,2651,2017
 Ucrânia,Europa,1623,34,1657,2017
-Outros,Europa,1434,28,1462,2017
+Outros - Europa,Europa,1434,28,1462,2017
 Austrália,Oceania,11292,1659,12951,2017
 Nova Zelândia,Oceania,2446,386,2832,2017
-Outros,Oceania,11,0,11,2017
+Outros - Oceania,Oceania,11,0,11,2017
 Países não especificados,Países não especificados,0,0,0,2017
 África do Sul,África,2660,156,2816,2018
 Angola,África,3211,0,3211,2018
@@ -195,7 +195,7 @@ Moçambique,África,622,0,622,2018
 Nigéria,África,347,0,347,2018
 Quênia,África,175,11,186,2018
 Tunísia,África,706,0,706,2018
-Outros,África,1111,31,1142,2018
+Outros - África,África,1111,31,1142,2018
 Costa Rica,América Central e Caribe,2833,8,2841,2018
 Cuba,América Central e Caribe,612,3,615,2018
 El Salvador,América Central e Caribe,875,2,877,2018
@@ -206,7 +206,7 @@ Nicarágua,América Central e Caribe,281,8,289,2018
 Panamá,América Central e Caribe,2457,9,2466,2018
 República Dominicana,América Central e Caribe,1056,12,1068,2018
 Trinidad e Tobago,América Central e Caribe,281,2,283,2018
-Outros,América Central e Caribe,473,25,498,2018
+Outros - América Central e Caribe,América Central e Caribe,473,25,498,2018
 Canadá,América do Norte,10145,610,10755,2018
 Estados Unidos,América do Norte,117738,2126,119864,2018
 México,América do Norte,11214,156,11370,2018
@@ -240,7 +240,7 @@ República da Coreia,Ásia,2909,9,2918,2018
 Síria,Ásia,117,0,117,2018
 Tailândia,Ásia,892,6,898,2018
 Taiwan,Ásia,853,4,857,2018
-Outros,Ásia,2783,9,2792,2018
+Outros - Ásia,Ásia,2783,9,2792,2018
 Alemanha,Europa,48817,927,49744,2018
 Áustria,Europa,5956,108,6064,2018
 Bélgica,Europa,6609,80,6689,2018
@@ -273,10 +273,10 @@ Suécia,Europa,8090,46,8136,2018
 Suíça,Europa,14828,205,15033,2018
 Turquia,Europa,1785,4,1789,2018
 Ucrânia,Europa,1691,29,1720,2018
-Outros,Europa,1326,72,1398,2018
+Outros - Europa,Europa,1326,72,1398,2018
 Austrália,Oceania,11041,315,11356,2018
 Nova Zelândia,Oceania,2459,93,2552,2018
-Outros,Oceania,24,2,26,2018
+Outros - Oceania,Oceania,24,2,26,2018
 Países não especificados,Países não especificados,8,0,8,2018
 África do Sul,África,3129,112,3241,2019
 Angola,África,2440,0,2440,2019
@@ -288,7 +288,7 @@ Moçambique,África,1011,4,1015,2019
 Nigéria,África,313,0,313,2019
 Quênia,África,92,11,103,2019
 Tunísia,África,802,3,805,2019
-Outros,África,1151,11,1162,2019
+Outros - África,África,1151,11,1162,2019
 Costa Rica,América Central e Caribe,1913,18,1931,2019
 Cuba,América Central e Caribe,427,5,432,2019
 El Salvador,América Central e Caribe,597,5,602,2019
@@ -299,7 +299,7 @@ Nicarágua,América Central e Caribe,264,8,272,2019
 Panamá,América Central e Caribe,2446,5,2451,2019
 República Dominicana,América Central e Caribe,536,1,537,2019
 Trinidad e Tobago,América Central e Caribe,210,2,212,2019
-Outros,América Central e Caribe,429,34,463,2019
+Outros - América Central e Caribe,América Central e Caribe,429,34,463,2019
 Canadá,América do Norte,13524,305,13829,2019
 Estados Unidos,América do Norte,116984,1645,118629,2019
 México,América do Norte,8121,422,8543,2019
@@ -333,7 +333,7 @@ República da Coreia,Ásia,4273,18,4291,2019
 Síria,Ásia,103,0,103,2019
 Tailândia,Ásia,669,8,677,2019
 Taiwan,Ásia,741,111,852,2019
-Outros,Ásia,2182,21,2203,2019
+Outros - Ásia,Ásia,2182,21,2203,2019
 Alemanha,Europa,43827,445,44272,2019
 Áustria,Europa,5010,82,5092,2019
 Bélgica,Europa,6288,62,6350,2019
@@ -366,8 +366,8 @@ Suécia,Europa,7817,81,7898,2019
 Suíça,Europa,13085,159,13244,2019
 Turquia,Europa,1197,115,1312,2019
 Ucrânia,Europa,2038,65,2103,2019
-Outros,Europa,1649,39,1688,2019
+Outros - Europa,Europa,1649,39,1688,2019
 Austrália,Oceania,12929,219,13148,2019
 Nova Zelândia,Oceania,1734,30,1764,2019
-Outros,Oceania,31,4,35,2019
+Outros - Oceania,Oceania,31,4,35,2019
 Países não especificados,Países não especificados,7,0,7,2019
