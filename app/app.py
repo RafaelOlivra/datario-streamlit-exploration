@@ -4,6 +4,7 @@ import pandas as pd
 import plotly.express as px
 import pydeck as pdk
 import time
+import numpy as np
 import locale
 from streamlit_js_eval import streamlit_js_eval
 
@@ -208,24 +209,27 @@ def plot_3d_globe_with_tourists_by_country(data, col=st):
     data = data.dropna(subset=['Latitude', 'Longitude'])
 
     # Add an offset for the "Marítima" bars to avoid overlap
-    data['Longitude_offset'] = data['Longitude'] + \
-        2  # Adjust the offset value as needed
+    data['Longitude_offset'] = data['Longitude'] + 2
 
-    # Adjust elevation_scale scale based on the number of tourists
-    air_elevation_scale = 9 if data['Aérea'].mean() > 9000 else 160
-    sea_elevation_scale = 9 if data['Aérea'].mean() > 10000 else 160
+    # Add new columns as source for the height of the bars
+    # and normalize the values using a logarithmic scale
+    data['Aérea_Normalized'] = np.log1p(data['Aérea']) * 5
+    data['Marítima_Normalized'] = np.log1p(data['Marítima']) * 5
+
+    elevation_scale = 40000
+    elevation_range = [0, 40000]
 
     # Create a ColumnLayer for the Aérea (Air) data
     air_column_layer = pdk.Layer(
         'ColumnLayer',
         data,
         get_position='[Longitude, Latitude]',
-        get_elevation='Aérea',  # Column height based on air tourist data
-        elevation_scale=air_elevation_scale,
+        get_elevation='Aérea_Normalized',  # Column height based on air tourist data
+        elevation_scale=elevation_scale,
         get_fill_color=[255, 0, 0],
+        elevation_range=elevation_range,
         radius=100000,
         pickable=True,
-        elevation_range=[0, 3000],
         extruded=True,
         auto_highlight=True
     )
@@ -235,12 +239,12 @@ def plot_3d_globe_with_tourists_by_country(data, col=st):
         'ColumnLayer',
         data,
         get_position='[Longitude_offset, Latitude]',
-        get_elevation='Marítima',
-        elevation_scale=sea_elevation_scale,
+        get_elevation='Marítima_Normalized',
+        elevation_scale=elevation_scale,
+        elevation_range=elevation_range,
         get_fill_color=[0, 0, 255],
         radius=100000,
         pickable=True,
-        elevation_range=[0, 3000],
         extruded=True,
         auto_highlight=True
     )
