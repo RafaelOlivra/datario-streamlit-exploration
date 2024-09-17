@@ -264,10 +264,9 @@ def plot_3d_globe_with_tourists_by_country(data, col=st):
 
 ### DATA UPLOAD ###
 def view_download_processed_csv():
-    st.write('## Download dos Dados Processados')
+    st.write('### Download dos Dados Processados')
     st.write('''Faça o download do arquivo CSV com os dados processados da planilha
              **"Chegada de turistas pelo Município do Rio de Janeiro, por vias de acesso, segundo continentes e países de residência permanente entre 2006-2019"**.''')
-    st.write('''Fonte: https://datario-pcrj.hub.arcgis.com/documents/665ce86a7a2e4c0fa523b7b7636513e0/about''')
 
     csv_content = get_csv_content("./data/02_processed/total_continentes.csv")
 
@@ -282,7 +281,7 @@ def view_download_processed_csv():
 
 
 def view_data_upload():
-    st.write('## Upload dos Dados')
+    st.write('### Upload dos Dados')
 
     if get_data() is not None:
         st.success(
@@ -512,6 +511,11 @@ def view_about():
     st.write('''Este é um projeto de exemplo para demonstrar o uso do Streamlit para a criação de um dashboard interativo.
              O dashboard permite a visualização dos dados de chegada de turistas no Município do Rio de Janeiro, por meios de acesso, segundo continentes e países de residência.
              Para começar, faça o download dos dados processados e em seguida faça o upload do arquivo CSV para explorar os dados.''')
+    st.write('### Fonte dos Dados')
+    st.write('''Os dados utilizados neste projeto foram obtidos do portal de dados abertos do Município do Rio de Janeiro.
+                O arquivo original pode ser encontrado [aqui](https://datario-pcrj.hub.arcgis.com/documents/665ce86a7a2e4c0fa523b7b7636513e0/about).''')
+    st.write('### Sobre o Autor')
+    st.write('''Este projeto foi criado Rafael Oliveira: https://github.com/RafaelOlivra/datario-streamlit-exploration''')
 
 
 ##############  DASHBOARD ##############
