@@ -268,11 +268,12 @@ def view_download_processed_csv():
     st.write('''Faça o download do arquivo CSV com os dados processados da planilha
              **"Chegada de turistas pelo Município do Rio de Janeiro, por vias de acesso, segundo
              continentes e países de residência permanente em 2019"**.''')
+    st.write('''Fonte: https://datario-pcrj.hub.arcgis.com/documents/665ce86a7a2e4c0fa523b7b7636513e0/about''')
 
     csv_content = get_csv_content("./data/02_processed/total_continentes.csv")
 
     st.download_button(
-        label="Download CSV",
+        label="Download do CSV",
         data=csv_content,
         file_name='total_continentes.csv',
         mime='text/csv',
@@ -435,7 +436,7 @@ def view_explore():
             'Clique no botão abaixo para fazer o download do arquivo CSV filtrado com base nas suas seleções.')
         csv_content = df.to_csv(index=False)
         st.download_button(
-            label="Download CSV",
+            label="Download do CSV",
             data=csv_content,
             file_name='turistas_rio_de_janeiro.csv',
             mime='text/csv',
