@@ -4,11 +4,15 @@ Este projeto foi feito para o TP3 da disciplina **Desenvolvimento Front-End com 
 
 https://lms.infnet.edu.br/moodle/mod/assign/view.php?id=420021
 
-----
+---
 
 **Rafael Soares de Oliveira**
 
 Infnet - Ciência de Dados | Setembro 2024
+
+### Dados
+
+Os dados utilizados nessa aplicação podem ser encontrados no site do DataRio: https://datario-pcrj.hub.arcgis.com/documents/665ce86a7a2e4c0fa523b7b7636513e0/about
 
 ### Inicializar o repositório (Com venv)
 
