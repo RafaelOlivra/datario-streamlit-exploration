@@ -175,6 +175,7 @@ def plot_bar_visitors_by_country(data, col=st):
     fig = px.bar(data, x='País', y='Total', title='Total de Turistas por País',
                  labels={'País': 'País', 'Total': 'Total de Turistas'},
                  template='plotly_dark',
+                 height=700
                  )
     st.plotly_chart(fig, use_container_width=True)
 
