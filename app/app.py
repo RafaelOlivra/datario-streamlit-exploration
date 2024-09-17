@@ -180,6 +180,20 @@ def plot_bar_visitors_by_country(data, col=st):
     st.plotly_chart(fig, use_container_width=True)
 
 
+def plot_area_visitors_by_year(data, col=st):
+    # Group by year and continent
+    data = data.groupby(['Ano', 'Continente']).sum().reset_index()
+
+    # Plot the total number of tourists by year and continent
+    fig = px.area(data, x='Ano', y='Total', color='Continente',
+                  title='Total de Turistas por Ano e Continente',
+                  labels={'Ano': 'Ano', 'Total': 'Total de Turistas'},
+                  template='plotly_dark',
+                  height=400
+                  )
+    col.plotly_chart(fig, use_container_width=True)
+
+
 def pie_chart_visitors_by_medium(data, col=st):
     # Make a pie chart comparing the percentage of tourists by air and sea
     total_air = data['Aérea'].sum()
@@ -431,6 +445,9 @@ def view_explore():
 
         # Make a pie chart comparing the percentage of tourists by air and sea
         pie_chart_visitors_by_medium(filtered_data, col2)
+
+        # Plot the total number of tourists by year and continent
+        plot_area_visitors_by_year(filtered_data)
 
         # Plot 3D world map with tourists by country
         plot_3d_globe_with_tourists_by_country(filtered_data)
