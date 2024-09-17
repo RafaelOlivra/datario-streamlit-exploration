@@ -21,7 +21,7 @@ st.set_page_config(
     initial_sidebar_state='auto'
 )
 
-############## SESSION STATE FUNCTION ##############
+############## SESSION STATE FUNCTIONS ##############
 
 if 'data' not in st.session_state:
     st.session_state.data = None
