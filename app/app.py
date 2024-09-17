@@ -266,18 +266,18 @@ def plot_3d_globe_with_tourists_by_country(data, col=st):
 def view_download_processed_csv():
     st.write('## Download dos Dados Processados')
     st.write('''Faça o download do arquivo CSV com os dados processados da planilha
-             **"Chegada de turistas pelo Município do Rio de Janeiro, por vias de acesso, segundo
-             continentes e países de residência permanente em 2019"**.''')
+             **"Chegada de turistas pelo Município do Rio de Janeiro, por vias de acesso, segundo continentes e países de residência permanente entre 2006-2019"**.''')
     st.write('''Fonte: https://datario-pcrj.hub.arcgis.com/documents/665ce86a7a2e4c0fa523b7b7636513e0/about''')
 
     csv_content = get_csv_content("./data/02_processed/total_continentes.csv")
 
     st.download_button(
-        label="Download do CSV",
+        label="Download do CSV Normalizado",
         data=csv_content,
         file_name='total_continentes.csv',
         mime='text/csv',
-        use_container_width=True
+        use_container_width=True,
+        type='primary'
     )
 
 
@@ -421,17 +421,17 @@ def view_explore():
             'Colunas', get_data().columns.tolist(), default=get_data().columns.tolist())
         df = get_data()[columns]
 
-        # Allow user to filter the displayed data with a search box
-        search = st.text_input('Pesquisar Valores', '')
-        if search:
+        # Allow user to filter the displayed data with a search_filter box
+        search_filter = st.text_input('Filtrar Valores', '')
+        if search_filter:
             df = df[df.astype(str).apply(
-                lambda x: x.str.contains(search, case=False, na=False)).any(axis=1)]
+                lambda x: x.str.contains(search_filter, case=False, na=False)).any(axis=1)]
 
         # Show the data in a dataframe
         st.dataframe(df, use_container_width=True)
 
         # Permite ao usuário download do arquivo CSV
-        st.write('##### Fazer Download do Arquivo CSV')
+        st.write('##### Download dos dados filtrados')
         st.write(
             'Clique no botão abaixo para fazer o download do arquivo CSV filtrado com base nas suas seleções.')
         csv_content = df.to_csv(index=False)
