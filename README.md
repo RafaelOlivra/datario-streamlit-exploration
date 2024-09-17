@@ -1,4 +1,4 @@
-# Dashboard - Chegada de Turistas no Rio de Janeiro (2019)
+# Dashboard - Chegada de Turistas no Rio de Janeiro (2016-2019)
 
 Este projeto foi feito para o TP3 da disciplina **Desenvolvimento Front-End com Python (com Streamlit)**
 
