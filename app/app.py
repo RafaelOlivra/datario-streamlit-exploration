@@ -20,7 +20,7 @@ st.set_page_config(
     initial_sidebar_state='auto'
 )
 
-############## STATE FUNCTION ##############
+############## SESSION STATE FUNCTION ##############
 
 if 'data' not in st.session_state:
     st.session_state.data = None
@@ -39,8 +39,8 @@ if 'styles' not in st.session_state:
         'font_family': 'default'
     }
 
-############## UTIL FUNCTIONS ##############
 
+############## UTIL FUNCTIONS ##############
 
 def format_number(number):
     # Convert to number if necessary
@@ -49,7 +49,43 @@ def format_number(number):
     return locale.format_string('%d', number, grouping=True)
 
 
+############## DATA FUNCTIONS ##############
+
+@st.cache_data
+def get_csv_content(csv_file):
+    df = pd.read_csv(csv_file)
+    return df.to_csv(index=False)
+
+
+def get_data():
+    return st.session_state.data
+
+
+def set_data(data):
+    # Make sure Ano is a string
+    if data is not None and 'Ano' in data.columns:
+        data['Ano'] = data['Ano'].astype(str)
+    st.session_state.data = data
+
+
+def get_available_views():
+    return ['Upload dos Dados', 'Explorar', 'Customizar', 'Sobre']
+
+
+def get_current_view():
+    current_view = st.session_state.current_view
+    return current_view or get_available_views()[0]
+
+
+def get_current_view_index():
+    return get_available_views().index(get_current_view())
+
+
+def set_current_view(view):
+    st.session_state.current_view = view
+
 ############## CUSTOMIZATION FUNCTIONS ##############
+
 
 def apply_customizations():
     # Ignore if customizations are not set
@@ -101,44 +137,8 @@ def apply_customizations():
         </style>
         """, unsafe_allow_html=True)
 
-############## DATA FUNCTIONS ##############
 
-
-@st.cache_data
-def get_csv_content(csv_file):
-    df = pd.read_csv(csv_file)
-    return df.to_csv(index=False)
-
-
-def get_data():
-    return st.session_state.data
-
-
-def set_data(data):
-    # Make sure Ano is a string
-    if data is not None and 'Ano' in data.columns:
-        data['Ano'] = data['Ano'].astype(str)
-    st.session_state.data = data
-
-
-def get_available_views():
-    return ['Upload dos Dados', 'Explorar', 'Customizar', 'Sobre']
-
-
-def get_current_view():
-    current_view = st.session_state.current_view
-    return current_view or get_available_views()[0]
-
-
-def get_current_view_index():
-    return get_available_views().index(get_current_view())
-
-
-def set_current_view(view):
-    st.session_state.current_view = view
-
-############## GRAPHS ##############
-
+############## PLOTS & GRAPHS ##############
 
 def plot_line_visitors_by_year(data, col=st):
     # Group by year
@@ -448,7 +448,7 @@ def view_explore():
 ### CUSTOMIZE ###
 def view_customize():
     # Allow user to customize the dashboard colors
-    st.title('🎨 Customizar')
+    st.title('🎨 Customizar Interface')
     st.write('Personalize o dashboard com suas cores preferidas.')
 
     bg_color = st.session_state.styles['bg_color']
@@ -462,7 +462,7 @@ def view_customize():
         # Allow the user to pick a custom background color
         st.write('###### Cor de Fundo')
         bg_color = st.color_picker(
-            'Escolha uma cor de fundo', bg_color or '#ffffff')
+            'Escolha uma cor de fundo', bg_color or '#fafafa')
         st.write(f'Selecionada: {bg_color}')
 
     with col2:
@@ -470,7 +470,7 @@ def view_customize():
         # Allow the user to pick a custom text color
         st.write('###### Cor do Texto')
         text_color = st.color_picker(
-            'Escolha uma cor para o texto', text_color or '#000000')
+            'Escolha uma cor para o texto', text_color or '#444444')
         st.write(f'Selecionada: {text_color}')
 
     # Allow the user to pick a custom font family
