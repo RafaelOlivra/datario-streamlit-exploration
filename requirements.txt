@@ -1,6 +1,10 @@
-streamlit==1.37.1
-streamlit-js-eval==0.1.7
-streamlit-extras==0.4.7
-pandas==2.2.2
-openpyxl==3.1.5
-xlrd==2.0.1
+streamlit
+streamlit-js-eval
+streamlit-extras
+pandas
+openpyxl
+xlrd
+unidecode
+plotly
+pydeck
+streamlit_js_eval

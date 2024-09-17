@@ -1,4 +1,9 @@
 # Dashboard - Chegada de Turistas no Rio de Janeiro (2019)
+
+Este projeto foi feito para o TP3 da disciplina **Desenvolvimento Front-End com Python (com Streamlit)**
+
+https://lms.infnet.edu.br/moodle/mod/assign/view.php?id=420021
+
 ----
 
 **Rafael Soares de Oliveira**
