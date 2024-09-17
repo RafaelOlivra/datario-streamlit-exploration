@@ -565,7 +565,7 @@ def view_about():
 
 ##############  DASHBOARD ##############
 def get_sidebar(view_index=0):
-    st.sidebar.title('Chegada de turistas no Rio de Janeiro')
+    st.sidebar.title('🧳Chegada de turistas pelo Município do Rio de Janeiro')
     st.sidebar.write('Selecione uma opção para visualizar os dados.')
     current_view = st.sidebar.radio(
         'Menu', get_available_views(), index=view_index)
